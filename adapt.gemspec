@@ -5,7 +5,7 @@ Gem::Specification.new do |gem|
   gem.homepage = %q{http://github.com/tylerhunt/adapt}
   gem.authors = ['Tyler Hunt']
 
-  gem.files = Dir['lib/**/*']
+  gem.files = Dir['LICENSE', 'lib/**/*']
 
   gem.add_dependency 'activemodel', '3.0.0'
   gem.add_dependency 'patron', '0.4.6'
