@@ -1,0 +1,54 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://svcs.sandbox.paypal.com:443/AdaptivePayments/Pay
+    body: "{\"actionType\":\"PAY\",\"cancelUrl\":\"http://example.com/cancel\",\"currencyCode\":\"USD\",\"receiverList\":{\"receiver\":[{\"amount\":\"10.00\",\"email\":\"seller_1278210365_biz@devoh.com\"}]},\"requestEnvelope\":{\"detailLevel\":\"ReturnAll\",\"errorLanguage\":\"en_US\"},\"returnUrl\":\"http://example.com/return\",\"senderEmail\":\"buyer_1285818165_per@devoh.com\"}"
+    headers: 
+      x-paypal-security-userid: 
+      - seller_1278210365_biz_api1.devoh.com
+      x-paypal-security-password: 
+      - 5RBB95ZTBDSR4MR2
+      x-paypal-security-signature: 
+      - A43UhUJ8Gsn-ptbpWEBRSvVxMZykA87EqndzoFCipFmz6cN2zycGoDjk
+      x-paypal-device-ipaddress: 
+      - 127.0.0.1
+      x-paypal-request-data-format: 
+      - JSON
+      x-paypal-response-data-format: 
+      - JSON
+      x-paypal-application-id: 
+      - APP-80W284485P519543T
+      expect: 
+      - ""
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      date: 
+      - Thu, 30 Sep 2010 03:43:42 GMT
+      server: 
+      - Apache-Coyote/1.1
+      x-paypal-service-version: 
+      - 1.5.0
+      x-ebay-soa-message-protocol: 
+      - NONE
+      x-ebay-soa-response-data-format: 
+      - JSON
+      x-paypal-service-name: 
+      - "{http://svcs.paypal.com/types/ap}AdaptivePayments"
+      x-paypal-operation-name: 
+      - Pay
+      x-ebay-soa-request-guid: 
+      - 12b60bd0-64f0-abfc-49b5-ef05fffce27b
+      content-type: 
+      - application/json;charset=UTF-8
+      set-cookie: 
+      - Apache=10.191.196.11.1285818222126762; path=/; expires=Tue, 16-Aug-04 21:15:26 GMT
+      vary: 
+      - Accept-Encoding
+      transfer-encoding: 
+      - chunked
+    body: "{\"responseEnvelope\":{\"timestamp\":\"2010-09-29T20:43:42.333-07:00\",\"ack\":\"Success\",\"correlationId\":\"c3d8817d023d0\",\"build\":\"1437064\"},\"payKey\":\"AP-2DA87188GH806132S\",\"paymentExecStatus\":\"CREATED\"}"
+    http_version: "1.1"

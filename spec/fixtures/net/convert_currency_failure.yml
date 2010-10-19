@@ -1,0 +1,56 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://svcs.sandbox.paypal.com:443/AdaptivePayments/ConvertCurrency
+    body: "{\"baseAmountList\":[{\"currency\":{\"amount\":100,\"code\":\"USD\"}},{\"currency\":{\"amount\":100,\"code\":\"GBP\"}}],\"convertToCurrencyList\":[{\"currencyCode\":\"EUR\"}],\"requestEnvelope\":null}"
+    headers: 
+      x-paypal-security-userid: 
+      - seller_1278210365_biz_api1.devoh.com
+      x-paypal-security-password: 
+      - 5RBB95ZTBDSR4MR2
+      x-paypal-security-signature: 
+      - A43UhUJ8Gsn-ptbpWEBRSvVxMZykA87EqndzoFCipFmz6cN2zycGoDjk
+      x-paypal-device-ipaddress: 
+      - 127.0.0.1
+      x-paypal-request-data-format: 
+      - JSON
+      x-paypal-response-data-format: 
+      - JSON
+      x-paypal-application-id: 
+      - APP-80W284485P519543T
+      expect: 
+      - ""
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      date: 
+      - Wed, 04 Aug 2010 01:33:18 GMT
+      server: 
+      - Apache-Coyote/1.1
+      x-paypal-error-response: 
+      - "TRUE"
+      x-paypal-service-version: 
+      - 1.5.0
+      x-ebay-soa-message-protocol: 
+      - NONE
+      x-ebay-soa-response-data-format: 
+      - JSON
+      x-paypal-service-name: 
+      - "{http://svcs.paypal.com/types/ap}AdaptivePayments"
+      x-paypal-operation-name: 
+      - ConvertCurrency
+      x-ebay-soa-request-guid: 
+      - 12a3abb2-9b70-abfc-4991-d461ffff67e7
+      content-type: 
+      - application/json;charset=UTF-8
+      set-cookie: 
+      - Apache=10.191.196.11.1280885598615495; path=/; expires=Mon, 20-Jun-04 19:05:02 GMT
+      vary: 
+      - Accept-Encoding
+      transfer-encoding: 
+      - chunked
+    body: "{\"responseEnvelope\":{\"timestamp\":\"2010-08-03T18:33:18.767-07:00\",\"ack\":\"Failure\",\"correlationId\":\"b4abecc0bc1cf\",\"build\":\"1383772\"},\"error\":[{\"errorId\":\"500000\",\"domain\":\"PLATFORM\",\"severity\":\"Error\",\"category\":\"Application\",\"message\":\"Internal Error\"}]}"
+    http_version: "1.1"

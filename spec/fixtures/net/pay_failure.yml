@@ -1,0 +1,56 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://svcs.sandbox.paypal.com:443/AdaptivePayments/Pay
+    body: "{\"actionType\":\"PAY\",\"cancelUrl\":\"http://example.com/cancel\",\"currencyCode\":\"USD\",\"receiverList\":{\"receiver\":[{\"amount\":\"-10.00\",\"email\":\"mary@example.com\"}]},\"requestEnvelope\":{\"detailLevel\":\"ReturnAll\",\"errorLanguage\":\"en_US\"},\"returnUrl\":\"http://example.com/return\",\"senderEmail\":\"buyer_1285818165_per@devoh.com\"}"
+    headers: 
+      x-paypal-security-userid: 
+      - seller_1278210365_biz_api1.devoh.com
+      x-paypal-security-password: 
+      - 5RBB95ZTBDSR4MR2
+      x-paypal-security-signature: 
+      - A43UhUJ8Gsn-ptbpWEBRSvVxMZykA87EqndzoFCipFmz6cN2zycGoDjk
+      x-paypal-device-ipaddress: 
+      - 127.0.0.1
+      x-paypal-request-data-format: 
+      - JSON
+      x-paypal-response-data-format: 
+      - JSON
+      x-paypal-application-id: 
+      - APP-80W284485P519543T
+      expect: 
+      - ""
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      date: 
+      - Tue, 19 Oct 2010 02:07:59 GMT
+      server: 
+      - Apache-Coyote/1.1
+      x-ebay-soa-request-guid: 
+      - 12bc23e3-b4e0-abfc-4991-70b1ffff2c2e
+      x-paypal-operation-name: 
+      - Pay
+      x-paypal-service-name: 
+      - "{http://svcs.paypal.com/types/ap}AdaptivePayments"
+      x-ebay-soa-message-protocol: 
+      - NONE
+      x-ebay-soa-response-data-format: 
+      - JSON
+      x-paypal-service-version: 
+      - 1.6.0
+      x-paypal-error-response: 
+      - "TRUE"
+      content-type: 
+      - application/json;charset=UTF-8
+      set-cookie: 
+      - Apache=10.191.196.11.1287454079793890; path=/; expires=Sun, 04-Sep-04 19:39:43 GMT
+      vary: 
+      - Accept-Encoding
+      transfer-encoding: 
+      - chunked
+    body: "{\"responseEnvelope\":{\"timestamp\":\"2010-10-18T19:07:59.903-07:00\",\"ack\":\"Failure\",\"correlationId\":\"248d741ff0f1f\",\"build\":\"1565353\"},\"error\":[{\"errorId\":\"580022\",\"domain\":\"PLATFORM\",\"severity\":\"Error\",\"category\":\"Application\",\"message\":\"Invalid request parameter: amount must be greater than zero\",\"parameter\":[\"amount\",\"-10.00\"]}]}"
+    http_version: "1.1"

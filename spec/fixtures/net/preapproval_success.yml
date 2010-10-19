@@ -1,0 +1,54 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://svcs.sandbox.paypal.com:443/AdaptivePayments/Preapproval
+    body: "{\"cancelUrl\":\"http://example.com/cancel\",\"currencyCode\":\"USD\",\"dateOfMonth\":\"1\",\"dayOfWeek\":\"NO_DAY_SPECIFIED\",\"endingDate\":\"2010-09-22T00:00:00\",\"maxAmountPerPayment\":\"10\",\"maxNumberOfPayments\":\"10\",\"maxNumberOfPaymentsPerPeriod\":\"10\",\"maxTotalAmountOfAllPayments\":\"100\",\"paymentPeriod\":\"DAILY\",\"requestEnvelope\":{\"detailLevel\":\"ReturnAll\",\"errorLanguage\":\"en_US\"},\"returnUrl\":\"http://example.com/return\",\"startingDate\":\"2010-09-22T00:00:00\"}"
+    headers: 
+      x-paypal-security-userid: 
+      - seller_1278210365_biz_api1.devoh.com
+      x-paypal-security-password: 
+      - 5RBB95ZTBDSR4MR2
+      x-paypal-security-signature: 
+      - A43UhUJ8Gsn-ptbpWEBRSvVxMZykA87EqndzoFCipFmz6cN2zycGoDjk
+      x-paypal-device-ipaddress: 
+      - 127.0.0.1
+      x-paypal-request-data-format: 
+      - JSON
+      x-paypal-response-data-format: 
+      - JSON
+      x-paypal-application-id: 
+      - APP-80W284485P519543T
+      expect: 
+      - ""
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      date: 
+      - Fri, 06 Aug 2010 03:31:40 GMT
+      server: 
+      - Apache-Coyote/1.1
+      x-paypal-service-version: 
+      - 1.5.0
+      x-ebay-soa-message-protocol: 
+      - NONE
+      x-ebay-soa-response-data-format: 
+      - JSON
+      x-paypal-service-name: 
+      - "{http://svcs.paypal.com/types/ap}AdaptivePayments"
+      x-paypal-operation-name: 
+      - Preapproval
+      x-ebay-soa-request-guid: 
+      - 12a45743-e4a0-abfc-4993-6923fffff272
+      content-type: 
+      - application/json;charset=UTF-8
+      set-cookie: 
+      - Apache=10.191.196.11.1281065500203310; path=/; expires=Wed, 22-Jun-04 21:03:24 GMT
+      vary: 
+      - Accept-Encoding
+      transfer-encoding: 
+      - chunked
+    body: "{\"responseEnvelope\":{\"timestamp\":\"2010-08-05T20:31:40.291-07:00\",\"ack\":\"Success\",\"correlationId\":\"cca2fd6c44bd7\",\"build\":\"1437064\"},\"preapprovalKey\":\"PA-0P77054533508484A\"}"
+    http_version: "1.1"

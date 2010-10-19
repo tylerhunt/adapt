@@ -1,0 +1,56 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://svcs.sandbox.paypal.com:443/AdaptivePayments/Preapproval
+    body: "{}"
+    headers: 
+      x-paypal-security-userid: 
+      - seller_1278210365_biz_api1.devoh.com
+      x-paypal-security-password: 
+      - 5RBB95ZTBDSR4MR2
+      x-paypal-security-signature: 
+      - A43UhUJ8Gsn-ptbpWEBRSvVxMZykA87EqndzoFCipFmz6cN2zycGoDjk
+      x-paypal-device-ipaddress: 
+      - 127.0.0.1
+      x-paypal-request-data-format: 
+      - JSON
+      x-paypal-response-data-format: 
+      - JSON
+      x-paypal-application-id: 
+      - APP-80W284485P519543T
+      expect: 
+      - ""
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      date: 
+      - Fri, 06 Aug 2010 03:47:40 GMT
+      server: 
+      - Apache-Coyote/1.1
+      x-paypal-error-response: 
+      - "TRUE"
+      x-paypal-service-version: 
+      - 1.5.0
+      x-ebay-soa-message-protocol: 
+      - NONE
+      x-ebay-soa-response-data-format: 
+      - JSON
+      x-paypal-service-name: 
+      - "{http://svcs.paypal.com/types/ap}AdaptivePayments"
+      x-paypal-operation-name: 
+      - Preapproval
+      x-ebay-soa-request-guid: 
+      - 12a4582e-4340-abfc-4993-6923fffff260
+      content-type: 
+      - application/json;charset=UTF-8
+      set-cookie: 
+      - Apache=10.191.196.11.1281066460181008; path=/; expires=Wed, 22-Jun-04 21:19:24 GMT
+      vary: 
+      - Accept-Encoding
+      transfer-encoding: 
+      - chunked
+    body: "{\"responseEnvelope\":{\"timestamp\":\"2010-08-05T20:47:40.266-07:00\",\"ack\":\"Failure\",\"correlationId\":\"029e122e2f1d3\",\"build\":\"1437064\"},\"error\":[{\"errorId\":\"500000\",\"domain\":\"PLATFORM\",\"severity\":\"Error\",\"category\":\"Application\",\"message\":\"Internal Error\"}]}"
+    http_version: "1.1"

@@ -1,0 +1,54 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://svcs.sandbox.paypal.com:443/AdaptivePayments/ConvertCurrency
+    body: "{\"baseAmountList\":[{\"currency\":{\"amount\":\"100.0\",\"code\":\"USD\"}},{\"currency\":{\"amount\":\"100.0\",\"code\":\"GBP\"}}],\"convertToCurrencyList\":[{\"currencyCode\":\"EUR\"}],\"requestEnvelope\":{\"detailLevel\":\"ReturnAll\",\"errorLanguage\":\"en_US\"}}"
+    headers: 
+      x-paypal-security-userid: 
+      - seller_1278210365_biz_api1.devoh.com
+      x-paypal-security-password: 
+      - 5RBB95ZTBDSR4MR2
+      x-paypal-security-signature: 
+      - A43UhUJ8Gsn-ptbpWEBRSvVxMZykA87EqndzoFCipFmz6cN2zycGoDjk
+      x-paypal-device-ipaddress: 
+      - 127.0.0.1
+      x-paypal-request-data-format: 
+      - JSON
+      x-paypal-response-data-format: 
+      - JSON
+      x-paypal-application-id: 
+      - APP-80W284485P519543T
+      expect: 
+      - ""
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      date: 
+      - Wed, 28 Jul 2010 04:01:32 GMT
+      server: 
+      - Apache-Coyote/1.1
+      x-paypal-service-version: 
+      - 1.5.0
+      x-ebay-soa-message-protocol: 
+      - NONE
+      x-ebay-soa-response-data-format: 
+      - JSON
+      x-paypal-service-name: 
+      - "{http://svcs.paypal.com/types/ap}AdaptivePayments"
+      x-paypal-operation-name: 
+      - ConvertCurrency
+      x-ebay-soa-request-guid: 
+      - 12a17365-a7c0-abfc-49a4-1dc4ffff9b78
+      content-type: 
+      - application/json;charset=UTF-8
+      set-cookie: 
+      - Apache=10.191.196.11.1280289692252486; path=/; expires=Mon, 13-Jun-04 21:33:16 GMT
+      vary: 
+      - Accept-Encoding
+      transfer-encoding: 
+      - chunked
+    body: "{\"responseEnvelope\":{\"timestamp\":\"2010-07-27T21:01:32.347-07:00\",\"ack\":\"Success\",\"correlationId\":\"693bb9196bf03\",\"build\":\"1383772\"},\"estimatedAmountTable\":{\"currencyConversionList\":[{\"baseAmount\":{\"code\":\"GBP\",\"amount\":\"100.0\"},\"currencyList\":{\"currency\":[{\"code\":\"EUR\",\"amount\":\"142.86\"}]}}]}}"
+    http_version: "1.1"

@@ -1,0 +1,56 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://svcs.sandbox.paypal.com:443/AdaptivePayments/SetPaymentOptions
+    body: "{\"payKey\":\"AP-2DA87188GH806132S\",\"requestEnvelope\":{\"detailLevel\":\"ReturnAll\",\"errorLanguage\":\"en_US\"},\"initiatingEntity\":{\"institutionCustomer\":{\"countryCode\":\"US\",\"displayName\":\"Great Bank\",\"email\":\"johnsmith@example.com\",\"firstName\":\"John\",\"institutionCustomerId\":\"23345\",\"institutionId\":\"IN-GK2V-YSTX-Y5E4-Z9UR\",\"lastName\":\"Smith\"}},\"displayOptions\":{\"emailHeaderImageUrl\":\"http://example.com/images/header.png\",\"emailMarketingImageUrl\":\"http://example.com/images/logo.png\"}}"
+    headers: 
+      x-paypal-security-userid: 
+      - seller_1278210365_biz_api1.devoh.com
+      x-paypal-security-password: 
+      - 5RBB95ZTBDSR4MR2
+      x-paypal-security-signature: 
+      - A43UhUJ8Gsn-ptbpWEBRSvVxMZykA87EqndzoFCipFmz6cN2zycGoDjk
+      x-paypal-device-ipaddress: 
+      - 127.0.0.1
+      x-paypal-request-data-format: 
+      - JSON
+      x-paypal-response-data-format: 
+      - JSON
+      x-paypal-application-id: 
+      - APP-80W284485P519543T
+      expect: 
+      - ""
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      date: 
+      - Tue, 19 Oct 2010 02:35:24 GMT
+      server: 
+      - Apache-Coyote/1.1
+      x-ebay-soa-request-guid: 
+      - 12bc2575-3be0-abfc-49b6-0636ffff2a70
+      x-paypal-operation-name: 
+      - SetPaymentOptions
+      x-paypal-service-name: 
+      - "{http://svcs.paypal.com/types/ap}AdaptivePayments"
+      x-ebay-soa-message-protocol: 
+      - NONE
+      x-ebay-soa-response-data-format: 
+      - JSON
+      x-paypal-service-version: 
+      - 1.6.0
+      x-paypal-error-response: 
+      - "TRUE"
+      content-type: 
+      - application/json;charset=UTF-8
+      set-cookie: 
+      - Apache=10.191.196.11.1287455724449851; path=/; expires=Sun, 04-Sep-04 20:07:08 GMT
+      vary: 
+      - Accept-Encoding
+      transfer-encoding: 
+      - chunked
+    body: "{\"responseEnvelope\":{\"timestamp\":\"2010-10-18T19:35:24.582-07:00\",\"ack\":\"Failure\",\"correlationId\":\"c2e331508294d\",\"build\":\"1565353\"},\"error\":[{\"errorId\":\"580022\",\"domain\":\"PLATFORM\",\"severity\":\"Error\",\"category\":\"Application\",\"message\":\"payKey AP-2DA87188GH806132S is expired\",\"parameter\":[\"AP-2DA87188GH806132S\"]}]}"
+    http_version: "1.1"
